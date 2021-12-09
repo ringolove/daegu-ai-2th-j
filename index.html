@@ -33,18 +33,28 @@
                     Hello, web
 
                     <input type="button" value="night" id="dayNightMode" onclick="
-                         // 만약에 이 버튼의 value값이 night라면
-                        if (document.querySelector('#dayNightMode').value === 'night'){
+                        function night(self){
                             document.querySelector('#root').style.backgroundColor = 'black';
                             document.querySelector('#root').style.color = 'white';
-                            document.querySelector('#dayNightMode').value = 'day';
-                            // 이 버튼 value값을 day로 변경
-                        } else {
-                        // 그렇지 않다면
-                            document.querySelector('#root').style.backgroundColor = 'white';
+                            self.value = 'day';
+                            let as = document.querySelectorAll('a');
+                            for(let i=0;i<as.length;i=i+1){
+                                as[i].style.color='white';
+                            }
+                        }
+                        function day(self){
+                        document.querySelector('#root').style.backgroundColor = 'white';
                             document.querySelector('#root').style.color = 'black';
-                            document.querySelector('#dayNightMode').value = 'night';
-                            // 이 버튼 value값을 night로 변경
+                            self.value = 'night';
+                            let as = document.querySelectorAll('a');
+                            for(let i=0;i<as.length;i=i+1){
+                                as[i].style.color='black';
+                            }
+                        }
+                        if (this.value === 'night'){
+                            night(this);
+                        } else {
+                            day(this);    
                         }
                     ">
                     <!-- 
@@ -59,5 +69,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
