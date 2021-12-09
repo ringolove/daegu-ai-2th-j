@@ -18,6 +18,7 @@
             }
 
         </style>
+        <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
     </head>
     <body id="root">
         <div class="container">
@@ -31,6 +32,15 @@
                 <div class="col">
                     <h2>Welcome</h2>
                     Hello, web
+                    
+                    <div id="table"></div>
+
+                    <script>
+                        var s = new dfd.Series([20, 21, 22, 23]); 
+                        s.plot('table').table();
+                        s.plot('line').table();
+                    </script>
+
 
                     <input type="button" value="night" id="dayNightMode" onclick="
                         function night(self){
