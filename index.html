@@ -21,16 +21,33 @@
     </head>
     <body id="root">
         <div class="container">
-            <h1>WEB</h1>
+            <h1><a href="1.html">WEB</a></h1>
             <div class="row">
                 <ol class="navigation col">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
+                    <li><a href="1.html">HTML</a></li>
+                    <li><a href="2.html">CSS</a></li>
+                    <li><a href="3.html">JavaScript</a></li>
                 </ol>
                 <div class="col">
                     <h2>Welcome</h2>
                     Hello, web
+
+                    <input type="button" value="night" id="dayNightMode" onclick="
+                         // 만약에 이 버튼의 value값이 night라면
+                        if (document.querySelector('#dayNightMode').value === 'night'){
+                            document.querySelector('#root').style.backgroundColor = 'black';
+                            document.querySelector('#root').style.color = 'white';
+                            document.querySelector('#dayNightMode').value = 'day';
+                            // 이 버튼 value값을 day로 변경
+                        } else {
+                        // 그렇지 않다면
+                            document.querySelector('#root').style.backgroundColor = 'white';
+                            document.querySelector('#root').style.color = 'black';
+                            document.querySelector('#dayNightMode').value = 'night';
+                            // 이 버튼 value값을 night로 변경
+                        }
+                    ">
+                    <!-- 
                     <input type="button" value="night" onclick="
                     document.querySelector('#root').style.backgroundColor = 'black';
                     document.querySelector('#root').style.color = 'white';
@@ -38,7 +55,7 @@
                     <input type="button" value="day" onclick="
                     document.querySelector('#root').style.backgroundColor = 'white';
                     document.querySelector('#root').style.color = 'black';
-                    ">
+                    "> -->
                 </div>
             </div>
         </div>
