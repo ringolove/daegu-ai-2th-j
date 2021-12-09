@@ -13,13 +13,13 @@
             }
 
             /*.nav로 하고 싶은 경우 class="nav"*/
-            .col{
+            .navigation{
                 border-right:1px solid blue;
             }
 
         </style>
     </head>
-    <body>
+    <body id="root">
         <div class="container">
             <h1>WEB</h1>
             <div class="row">
@@ -31,6 +31,14 @@
                 <div class="col">
                     <h2>Welcome</h2>
                     Hello, web
+                    <input type="button" value="night" onclick="
+                    document.querySelector('#root').style.backgroundColor = 'black';
+                    document.querySelector('#root').style.color = 'white';
+                    ">
+                    <input type="button" value="day" onclick="
+                    document.querySelector('#root').style.backgroundColor = 'white';
+                    document.querySelector('#root').style.color = 'black';
+                    ">
                 </div>
             </div>
         </div>
